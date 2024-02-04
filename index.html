@@ -4,84 +4,100 @@
         <title>My Awesome Portfolio</title>
         <link rel="stylesheet" href="reset.css">
         <link rel="stylesheet" href="style.css">
-        <meta name="viewport" content="width="device-width, initial-scale=1">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        <header>
+        <header class="neutral-theme">
             <h1>My name is <span class="heading-highlight">Roger Djator</span>.<br>
                 I am a web developper.
                 </h1>
-                <a href="#" class="button">Find out more</a>
+                <a href="#main" class="button header-link">Find out more</a>
         </header>
-        <main>
-            <section>
-                <h2 class="about">ABOUT ME</h2>
-                <img src="ro.jpg" alt="a portrait of a black man in a red shirt smiling at camera" class="about-img">
-                <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae consequatur velit voluptatum maxime esse vel libero repellat hic porro, nulla error excepturi, quae consequuntur a tempore mollitia dolor itaque? Ut!
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio rem ratione fugit commodi facere et, libero iure. Eum assumenda dignissimos officiis ipsam, facere corrupti eligendi autem aliquam? Assumenda, voluptatem minus.
-                </p>
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla laboriosam dolorem quo vitae dignissimos. Laboriosam optio ex nulla libero nemo maiores adipisci distinctio eaque sunt, dolores ullam animi aut quisquam.
-                </p>
-                <a href="#">My resume</a>
+        <main id="main">
+            <section class="about primary-theme">
+                <h2>About me</h2>
+                <div class="about-info">
+                    <img src="ro.jpg" alt="a portrait of a black man in a red shirt smiling at camera" class="about-img">
+                    <div class="about-text">
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae consequatur velit voluptatum maxime esse vel libero repellat hic porro, nulla error excepturi, quae consequuntur a tempore mollitia dolor itaque? Ut!
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio rem ratione fugit commodi facere et, libero iure. Eum assumenda dignissimos officiis ipsam, facere corrupti eligendi autem aliquam? Assumenda, voluptatem minus.
+                        </p>
+                        <p>
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla laboriosam dolorem quo vitae dignissimos. Laboriosam optio ex nulla libero nemo maiores adipisci distinctio eaque sunt, dolores ullam animi aut quisquam.
+                        </p>
+                        <a href="#" class="button">My resume</a>
+                    </div>
+                </div>
                 <blockquote>
                     To iterate is human, to recurse divine.
                     <cite>--Peter Deutsch</cite>
                 </blockquote>
             </section>
-            <section>
+            <section class="neutral-theme project-spacing">
                 <h2>Projects</h2>
                 <article>
-                    <h3>Projects title</h3>
-                    <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat corporis deserunt praesentium, accusamus quasi a non provident facilis dolorum iure quis architecto. Vitae quaerat nostrum aperiam ipsam cumque consequatur magni!
-                    </p>
-                    <a href="#">See it live</a>
-                    <a href="#">Fork it on Github</a>
-                    <img src="http://placekitten.com/200/200">
+                    <div class="article-text">
+                        <h3>Projects title</h3>
+                        <p>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat corporis deserunt praesentium, accusamus quasi a non provident facilis dolorum iure quis architecto. Vitae quaerat nostrum aperiam ipsam cumque consequatur magni!
+                        </p>
+                        <a href="#" class="button">See it live</a>
+                        <a href="#" class="button">Fork it on Github</a>
+                    </div>
+                    <img src="http://placekitten.com/200/200" class="article-image">
                 </article>
                 <article>
-                    <h3>Projects title</h3>
-                    <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat corporis deserunt praesentium, accusamus quasi a non provident facilis dolorum iure quis architecto. Vitae quaerat nostrum aperiam ipsam cumque consequatur magni!
-                    </p>
-                    <a href="#">See it live</a>
-                    <a href="#">Fork it on Github</a>
-                    <img src="http://placekitten.com/200/200">
+                    <div class="article-text">
+                        <h3>Projects title</h3>
+                        <p>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat corporis deserunt praesentium, accusamus quasi a non provident facilis dolorum iure quis architecto. Vitae quaerat nostrum aperiam ipsam cumque consequatur magni!
+                        </p>
+                        <a href="#" class="button">See it live</a>
+                        <a href="#" class="button">Fork it on Github</a>
+                    </div>
+                    <img src="http://placekitten.com/200/200" class="article-image">
                 </article>
                 <article>
-                    <h3>Projects title</h3>
-                    <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat corporis deserunt praesentium, accusamus quasi a non provident facilis dolorum iure quis architecto. Vitae quaerat nostrum aperiam ipsam cumque consequatur magni!
-                    </p>
-                    <a href="#">See it live</a>
-                    <a href="#">Fork it on Github</a>
-                    <img src="http://placekitten.com/200/200">
+                    <div class="article-text">
+                        <h3>Projects title</h3>
+                        <p>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat corporis deserunt praesentium, accusamus quasi a non provident facilis dolorum iure quis architecto. Vitae quaerat nostrum aperiam ipsam cumque consequatur magni!
+                        </p>
+                        <a href="#" class="button">See it live</a>
+                        <a href="#" class="button">Fork it on Github</a>
+                    </div>
+                    <img src="http://placekitten.com/200/200" class="article-image">
                 </article>
             </section>
-            <section>
+            <section class="primary-theme contact">
                 <h2>CONTACT</h2>
                 <p>
                 If you would like to work with me, you can drop me a message.
                 </p>
-                <a href="mailto:email,@test.com">Let's talk</a>
+                <a href="mailto:email,@test.com" class="button">Let's talk</a>
             </section>
             <footer>
-                <ul>
-                    <li>
-                        <a href="linkdin url">My Linkdin<img src="#"></a></li>
-                    <li>
-                        <a href="github url">My Github<img src="#"></a></li>
-                    <li>
-                        <a href="youtube url">My Youtube<img src="#"></a></li>
-                    <li>
-                        <a href="facebook page url">My Facebook page<img src="#"></a></li>
+                <ul class="social">
+                    <li class="social-item">
+                        <a class="social-link li" href="linkdin url" >My Linkdin</a></li>
+                    <li class="social-item">
+                        <a class="social-link gh" href="github url">My Github</a></li>
+                    <li class="social-item">
+                        <a class="social-link yt" href="youtube url">My Youtube</a></li>
+                    <li class="social-item">
+                        <a class="social-link fb" href="facebook page url">My Facebook page</a></li>
                 </ul>
                 <p>&copy; 2023 Roger Djator</p>
             </footer>
+<!-- display flex
+<border-box></border-box>
+units
+clamp -->
+
         </main>
     </body>
 

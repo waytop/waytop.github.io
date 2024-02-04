@@ -1,10 +1,31 @@
+/* Les variables suivantes sont définies dans :root pour qu'on puisse les utiliser dans tout le document */
+
 :root {
-    --primary: #0595cd;
+    --primary-color: #0595cd;
+    --secondary-color: white;
     --spacing: 4rem;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: arial, helvetica, sans-serif;
+}
+
+/* Une variable es valide pour l'élément ppour lequel il est défini et ses descendants. Cela permet définir deux thèmes avec le même nommage afin d'avoir une seule règle css pour "button" mais un résultat différent selon le thème. */
+.neutral-theme {
+    background-color: var(--secondary-color);
+    --button-color: var(--primary-color);
+    --button-hover-color: var(--secondary-color);
+}
+
+.primary-theme {
+    color: white;
+    background-color: var(--primary-color);
+    --button-color: var(--secondary-color);
+    --button-hover-color: var(--primary-color);
 }
 
 header {
@@ -15,13 +36,6 @@ header {
     justify-content: center;
     padding: 2rem;
 }
-
-html {
-    box-sizing: border-box;
-  }
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
 
 h1 {
     margin-bottom: 2rem;
@@ -35,31 +49,87 @@ h1 {
 }
 
 .button {
-    border: 1px solid red;
+    display: inline-block;
+    width: max-content; /* max-content pour que la boîte prenne la largeur de son contenu */
+    border: 1px solid var(--button-color);
     padding: 1rem;
     font-weight: bold;
-    color: red;
+    color: var(--button-color);
     text-decoration: none;
+    /* box-shadow: 5px 5px 5px 1px #733030, -5px -5px 5px 1px #733030, 5px 5px 5px 1px #733030 inset, -5px -5px 5px 1px #733030 inset;
+    border-radius: 0px 25px; */
+}
+
+
+.button:hover {
+    color: var(--button-hover-color);
+    background-color: var(--button-color);
+}
+
+.header-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+.header-link::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: .5rem .5rem 0 .5rem;
+    border-color: var(--button-color) transparent transparent transparent
+}
+
+.header-link:hover::after {
+    border-color: var(--button-hover-color) transparent transparent transparent
+
 }
 
 .about {
     padding: var(--spacing);
-    color: white;
-    background-color: var(--primary);
+    position: relative;
+}
+.about::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    /* abaisser la position de l'élément pour pouvoir recouvrir l'espace avec la taille du triangle */
+    bottom: -100px;
+    height: 0;
+    width: 0;
+    border-top: 100px solid var(--primary-color);
+    border-right: 100vw solid transparent;
 }
 
+
 h2 {
-    margin-bottom: var(spacing);
+    margin-bottom: var(--spacing);
     text-align: center;
     font-size: 3vw;
     font-weight: bold;
     text-transform: uppercase;
 }
 
+h3 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+section {
+    padding: var(--spacing);
+}
+
 .about-img {
     max-width: 350px;
-    margin-bottom: 1em;
+    filter: grayscale(100%);
+}
 
+.about-img:hover {
+    filter: grayscale(0);
 }
 
 p {
@@ -67,3 +137,136 @@ p {
     font-size: 1rem;
     line-height: 1.4rem;
 }
+
+/* il faut trouver les point de cassure (break point). En utilisant l'outils inspecter et en rouant et déroulant la fenêtre, on peut remarquer les changements de design qui vont correspondre aux différents écrans puis on note les largeurs qui apparaissent en haut */
+.about-info {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing);
+}
+
+blockquote {
+    margin-top: var(--spacing);
+    font-size: 2rem;
+    font-style: italic;
+    text-align: center;
+}
+
+cite {
+    display: block;
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-style: normal;
+}
+
+.project-spacing {
+    margin: var(--spacing) 0;
+}
+
+article {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.article-image {
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+.contact {
+    text-align: center;
+    position: relative;
+}
+
+.contact::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: -100px;
+    height: 0;
+    width: 0;
+    border-top: 100px solid transparent;
+    border-right: 100vw solid var(--primary-color);
+}
+
+footer {
+    padding: var(--spacing);
+    padding-bottom: 1rem;
+    background-color: #333;
+    color: wheat;
+    & p {
+        text-align: center;
+    }
+}
+
+.social {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.social-link {
+    display: block;
+    width: 40px;
+    height: 40px;
+    /* 60px représente le bout du doigt. C'est adapté pour les téléphones et pour les pc  */
+    color: transparent;
+    font-size: 1px;
+/* Le texte sera visuellement caché mais les sr pourront le lire  */
+    background-repeat: no-repeat;
+    background-size: 40px;
+    filter: invert(100);
+    transition: all 0.2s ease-in-out;
+}
+
+.social-link:hover {
+    transform: scale(1.1);
+}
+
+
+.li {
+    background-image: url(social_media_icon/li.png);
+}
+
+.gh {
+    background-image: url(social_media_icon/gh.png);
+}
+
+.yt {
+    background-image: url(social_media_icon/yt.png);
+}
+
+.fb {
+    background-image: url(social_media_icon/fb.png);
+}
+
+/* minimum 800px: écran large: */
+@media (min-width: 800px) {
+    .about-info {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    article {
+        flex-direction: row;
+        max-width: 960px;
+        gap: var(--spacing);
+        margin: 0 auto var(--spacing);
+    }
+
+        .article-image {
+    max-width: 350px;
+    object-fit: cover;
+}
+
+}
+
+/* qu'est-ce que l'élément "root"?
+"root" est l'élément racine. En html, il correspond à l'élément "html" mais l'indexation est plus fort */
+
+/* I am confused with display: block and display: flex  */
